@@ -1,61 +1,39 @@
-﻿# UM Hackathon - RefundFlow
+# RefundFlow
 
-## Pitching Video
+An AI-powered customer refund workflow prototype developed for the **AI Systems & Agentic Workflow Automation Hackathon 2026**.
 
-10-minute pitching and product demonstration video: [Watch the demo video](https://drive.google.com/file/d/11IbjAkBaLZCdk-M-1nOVwyUMpRswM5sR/view?usp=sharing)
+## Overview
 
-## Project Overview
+RefundFlow is designed to streamline customer refund processing by handling different stages of the workflow through an AI-assisted backend.
 
-RefundFlow is an AI-powered customer refund workflow prototype for the UM Hackathon. It uses Z.AI GLM as the central reasoning engine and a backend multi-agent workflow layer to handle refund intake, validation, order verification, manual review, audit logging, and prototype approval.
+The prototype covers:
 
-## Repository Structure
+- Refund request intake
+- Refund validation
+- Order verification
+- Manual review
+- Approval workflow
+- Audit logging
 
-```text
-UMHack/
-|-- README.md
-|-- customer_refund_backend.py
-|-- customer_refund_app_realistic.html
-|-- Project Requirement Document (PRD).pdf
-|-- System Analysis Documentation (SAD).pdf
-|-- QATD_AGENT.pdf
-|-- Pitch Deck.pdf
-`-- .gitignore
-```
+The system uses a web-based frontend and a Python backend with an AI reasoning component.
 
-## How To Run
-
-1. Start the backend from the repository root:
-
-```bash
-uvicorn customer_refund_backend:app --reload
-```
-
-2. Open the frontend file in a browser:
+## System Overview
 
 ```text
-customer_refund_app_realistic.html
-```
-
-3. Make sure the frontend backend URL points to:
-
-```text
-http://127.0.0.1:8000
-```
-
-## Submission Items
-
-| Requirement | Location |
-|---|---|
-| PRD (Product) | `Project Requirement Document (PRD).pdf` |
-| SAD (System) | `System Analysis Documentation (SAD).pdf` |
-| QATD (Testing) | `QATD_AGENT.pdf` |
-| Pitching Deck | `Pitch Deck.pdf` |
-| 10-minute Pitching Video | First section of this README |
-| Code Repository | This GitHub repository |
-
-## Prototype Notes
-
-- The backend uses an in-memory mock order database for verification.
-- Prototype approval does not send real money or call a real payment gateway.
-- Restarting the backend clears in-memory workflows and refund cases.
-
+Customer
+   |
+   v
+Web Interface
+   |
+   v
+Refund Workflow Backend
+   |
+   +--> Refund Validation
+   |
+   +--> Order Verification
+   |
+   +--> Review
+   |
+   +--> Approval
+   |
+   +--> Audit Logging
